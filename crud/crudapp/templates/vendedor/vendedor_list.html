@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Item List</title>
+</head>
+<body>
+    <h1>Vendedor List</h1>
+    <a href="{% url 'vendedor_new' %}">Add New Item</a>
+    <ul>
+        {% for vendedor in vendedores %}
+            <li>{{ vendedor.nombre }} - {{ vendedor.apellido }}</li>
+            <a href="{% url 'vendedor_edit' vendedor.pk %}">Edit</a> |
+            <a href="{% url 'vendedor_delete' vendedor.pk %}">Delete</a>
+        {% endfor %}
+    </ul>
+</body>
+</html>
